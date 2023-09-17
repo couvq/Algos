@@ -30,7 +30,7 @@ var printLinkedListRecursive = function (head) {
     if (!head)
         return;
     console.log(head.value);
-    return printLinkedListRecursive(head.next);
+    printLinkedListRecursive(head.next);
 };
 console.log("-----recursive-----");
 printLinkedListRecursive(a);

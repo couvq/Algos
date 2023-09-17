@@ -16,7 +16,6 @@ c.next = d;
  */
 const printLinkedListIterative = (head: Node): void => {
   let current = head;
-
   while (current) {
     console.log(current.value);
     current = current.next;
@@ -31,10 +30,8 @@ printLinkedListIterative(a);
  */
 const printLinkedListRecursive = (head: Node): void => {
   if (!head) return;
-
   console.log(head.value);
-
-  return printLinkedListRecursive(head.next);
+  printLinkedListRecursive(head.next);
 };
 console.log("-----recursive-----");
 printLinkedListRecursive(a);
