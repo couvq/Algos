@@ -1,13 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Node_1 = require("./Node");
-var a = new Node_1.Node("A");
-var b = new Node_1.Node("B");
-var c = new Node_1.Node("C");
-var d = new Node_1.Node("D");
-a.next = b;
-b.next = c;
-c.next = d;
+var a = (0, Node_1.setUpLinkedList)();
 // A -> B -> C -> D -> null
 /**
  * (iterative) traverses linked list and prints out each node in consecutive order
