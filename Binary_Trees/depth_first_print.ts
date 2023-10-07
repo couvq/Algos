@@ -1,8 +1,8 @@
 import { buildDefaultTree, Node } from "./Node";
 
 const depthFirstPrintIterative = (root: Node) => {
-  const stack = [];
-  stack.push(root);
+  if (!root) return;
+  const stack = [root];
 
   while (stack.length) {
     const current = stack.pop();
