@@ -12,12 +12,11 @@ const depthFirstPrintIterative = (root: Node) => {
   }
 };
 
-const depthFirstPrintRecursive = (root: Node, stack: Node[] = []) => {
+const depthFirstPrintRecursive = (root: Node) => {
   if (!root) return;
-  stack.push(root);
   console.log(root.value);
-  depthFirstPrintRecursive(root.left, stack);
-  depthFirstPrintRecursive(root.right, stack);
+  depthFirstPrintRecursive(root.left);
+  depthFirstPrintRecursive(root.right);
 };
 
 const root = buildDefaultTree();
