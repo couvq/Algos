@@ -19,8 +19,18 @@ const depthFirstPrintRecursive = (root: Node) => {
   depthFirstPrintRecursive(root.right);
 };
 
+const depthFirstListRecursive = (root: Node, result: string[] = []) => {
+  if (!root) return [];
+  result.push(root.value);
+  depthFirstListRecursive(root.left, result);
+  depthFirstListRecursive(root.right, result);
+  return result;
+};
+
 const root = buildDefaultTree();
 console.log("-----Iterative-----");
 depthFirstPrintIterative(root);
 console.log("-----Recursive-----");
 depthFirstPrintRecursive(root);
+console.log("-----Recursive returns list of values-----");
+console.log(depthFirstListRecursive(root));
