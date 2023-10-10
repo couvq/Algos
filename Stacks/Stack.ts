@@ -5,6 +5,8 @@ interface Stack<T> {
   pop(): T;
   /** Returns the last item added to the stack, does not remove it. */
   peek(): T;
+  /** Returns the current length of the stack. */
+  length(): number;
   /** Prints out array contents (for debugging) */
   print(): void;
 }
@@ -20,6 +22,10 @@ export class StackArrayImpl<T> implements Stack<T> {
     this.storage = [];
   }
 
+  length(): number {
+    return this.storage.length;
+  }
+
   print(): void {
     console.debug(`Current stack contents is: ${this.storage}`);
   }
@@ -29,35 +35,10 @@ export class StackArrayImpl<T> implements Stack<T> {
   }
 
   pop(): T {
-    if (!this.storage.length) {
-      throw new Error("Stack is empty, can't call pop!");
-    } else {
-      return this.storage.pop();
-    }
+    return this.storage.pop();
   }
 
   peek(): T {
-    if (!this.storage.length) {
-      throw new Error("Stack is empty, can't call peek!");
-    } else {
-      return this.storage[this.storage.length - 1];
-    }
+    return this.storage[this.storage.length - 1];
   }
 }
-
-console.log("-----StackArrayImpl-----");
-const stackArray = new StackArrayImpl<string>();
-console.log("initially empty...");
-stackArray.print();
-console.log("adding a to the stack...");
-stackArray.push("a");
-stackArray.print();
-console.log("adding b to the stack...");
-stackArray.push("b");
-stackArray.print();
-console.log(`peeking, should be b: ${stackArray.peek()}`);
-console.log(`popping, b should have been returned: ${stackArray.pop()}`);
-console.log("array should only have a now...");
-stackArray.print();
-console.log(`popping one more time, should return a: ${stackArray.pop()}`);
-console.log(`array should now be empty: ${stackArray.print()}`);
