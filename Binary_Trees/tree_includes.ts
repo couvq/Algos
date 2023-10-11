@@ -1,3 +1,4 @@
+import { StackArrayImpl } from "../Stacks/Stack";
 import { buildDefaultTree, Node } from "./Node";
 
 /**
@@ -8,9 +9,10 @@ import { buildDefaultTree, Node } from "./Node";
  */
 const treeIncludesIterative = (root: Node, value: string): boolean => {
   if (!root) return false;
-  const stack = [root];
+  const stack = new StackArrayImpl<Node>();
+  stack.push(root);
 
-  while (stack.length) {
+  while (stack.size()) {
     const current = stack.pop();
 
     if (current.value === value) return true;

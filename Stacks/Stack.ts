@@ -6,7 +6,7 @@ interface Stack<T> {
   /** Returns the last item added to the stack, does not remove it. */
   peek(): T;
   /** Returns the current length of the stack. */
-  length(): number;
+  size(): number;
   /** Prints out array contents (for debugging) */
   print(): void;
 }
@@ -22,7 +22,7 @@ export class StackArrayImpl<T> implements Stack<T> {
     this.storage = [];
   }
 
-  length(): number {
+  size(): number {
     return this.storage.length;
   }
 
