@@ -7,9 +7,9 @@ import { buildDefaultTree, Node } from "./Node";
  * @param value value to search for in the given tree
  * @returns boolean indicating if value is present in the given tree
  */
-const treeIncludesIterative = (root: Node, value: string): boolean => {
+const treeIncludesIterative = (root: Node<string>, value: string): boolean => {
   if (!root) return false;
-  const stack = new StackArrayImpl<Node>();
+  const stack = new StackArrayImpl<Node<string>>();
   stack.push(root);
 
   while (stack.size()) {
@@ -30,7 +30,7 @@ const treeIncludesIterative = (root: Node, value: string): boolean => {
  * @param value value to search for in the given tree
  * @returns boolean indicating if value is present in the given tree
  */
-const treeIncludesRecursive = (root: Node, value: string): boolean => {
+const treeIncludesRecursive = (root: Node<string>, value: string): boolean => {
   if (!root) return false;
   if (root.value === value) return true;
   return (

@@ -1,6 +1,6 @@
 import { buildDefaultTree, Node } from "./Node";
 
-const depthFirstPrintIterative = (root: Node) => {
+const depthFirstPrintIterative = (root: Node<string>) => {
   if (!root) return;
   const stack = [root];
 
@@ -12,14 +12,14 @@ const depthFirstPrintIterative = (root: Node) => {
   }
 };
 
-const depthFirstPrintRecursive = (root: Node) => {
+const depthFirstPrintRecursive = (root: Node<string>) => {
   if (!root) return;
   console.log(root.value);
   depthFirstPrintRecursive(root.left);
   depthFirstPrintRecursive(root.right);
 };
 
-const depthFirstListRecursive = (root: Node, result: string[] = []) => {
+const depthFirstListRecursive = (root: Node<string>, result: string[] = []) => {
   if (!root) return [];
   result.push(root.value);
   depthFirstListRecursive(root.left, result);

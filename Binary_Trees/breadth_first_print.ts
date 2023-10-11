@@ -1,6 +1,6 @@
 import { buildDefaultTree, Node } from "./Node";
 
-const breadthFirstPrint = (root: Node): void => {
+const breadthFirstPrint = (root: Node<string>): void => {
   if (!root) return;
 
   const queue = [root];
