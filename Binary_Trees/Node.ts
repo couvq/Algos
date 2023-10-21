@@ -88,3 +88,29 @@ export const buildTreeMinValueTree = (): Node<number> => {
 
   return five;
 };
+
+/**
+ *           5
+ *          / \
+ *        11   3
+ *        /\    \
+ *       4  2    1
+ */
+export const buildMaxPathSumTree = (): Node<number> => {
+  const five = new Node(5);
+  const eleven = new Node(11);
+  const three = new Node(3);
+
+  five.left = eleven;
+  five.right = three;
+
+  const four = new Node(4);
+  const two = new Node(2);
+  const one = new Node(1);
+
+  eleven.left = four;
+  eleven.right = two;
+  three.right = one;
+
+  return five;
+};
